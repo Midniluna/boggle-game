@@ -1,11 +1,23 @@
 {% extends 'home.html' %} {% block content %}
-<table name="boggleboard">
-	{% for row in board %}
-	<tr>
-		{% for column in row %}
-		<td>{{column}}</td>
+<section id="boggle">
+	<table name="boggleboard" class="board">
+		{% for row in board %}
+		<tr>
+			{% for column in row %}
+			<td>{{column}}</td>
+			{% endfor %}
+		</tr>
 		{% endfor %}
-	</tr>
-	{% endfor %}
-</table>
+	</table>
+	<h2>Take a guess!</h2>
+	<form action="submit">
+		<label for="guess_word">Enter guess:</label>
+		<input type="text" name="guess_word" placeholder="Enter your guess here" />
+	</form>
+</section>
+{% endblock %} {% block runjavascript %}
+<script src="/static/app.js"></script>
+<script>
+	let game = new BoggleGame("boggle", 60);
+</script>
 {% endblock %}

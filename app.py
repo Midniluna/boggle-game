@@ -12,8 +12,8 @@ boggle_game = Boggle()
 
 @app.route('/')
 def start_page():
-    # if session['board']:
-    #     return redirect ('/boggle-game')
+    if session.get('board'):
+        return redirect ('/boggle-game')
     return render_template('home.html')
 
 
@@ -21,9 +21,9 @@ def start_page():
 def generate_board():
     new_game = boggle_game.make_board()
     session['board'] = new_game
-    print(session)
     return redirect('/boggle-game')
 
 @app.route('/boggle-game')
 def start_game():
     return render_template('initialize-game.html', board = session['board'])
+

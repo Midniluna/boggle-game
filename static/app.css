@@ -1,5 +1,6 @@
 body {
 	background-color: azure;
+	text-align: center;
 }
 
 table {
@@ -19,4 +20,8 @@ td {
 	border: 2px solid black;
 	padding: 0.8rem;
 	font-size: 2rem;
+}
+
+form {
+	display: inline-block;
 }
