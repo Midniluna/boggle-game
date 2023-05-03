@@ -10,14 +10,28 @@
 		{% endfor %}
 	</table>
 	<h2>Take a guess!</h2>
-	<form action="submit">
-		<label for="guess_word">Enter guess:</label>
-		<input type="text" name="guess_word" placeholder="Enter your guess here" />
+	<form method="POST" class="check-word">
+		<label for="word">Enter guess:</label>
+		<input
+			type="text"
+			name="word"
+			class="word"
+			placeholder="Enter your word here"
+			autofocus
+		/>
+		<button>Submit</button>
 	</form>
+	<h2>Score: <b class="score">0</b></h2>
+	<p class="msg">
+		<!-- For popup messages -->
+	</p>
 </section>
+<form action="/restart" class="restart">
+	<button>Restart?</button>
+</form>
 {% endblock %} {% block runjavascript %}
 <script src="/static/app.js"></script>
-<script>
+<!-- <script>
 	let game = new BoggleGame("boggle", 60);
-</script>
+</script> -->
 {% endblock %}
