@@ -9,12 +9,14 @@
 	</head>
 	<body>
 		{% block content %}
-		<form action="/start" method="POST">
-			<button>Start game?</button>
-		</form>
+		<div class="begin">
+			<form action="/start" method="POST">
+				<button id="begin_button">Start game?</button>
+			</form>
+		</div>
 		{% endblock %}
 	</body>
 	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 	<script src="https://unpkg.com/axios/dist/axios.js"></script>
-	{% block runjavascript %} {% endblock %}
+	<script src="/static/app.js"></script>
 </html>

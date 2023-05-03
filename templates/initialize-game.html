@@ -9,7 +9,7 @@
 		</tr>
 		{% endfor %}
 	</table>
-	<h2>Take a guess!</h2>
+	<h2 class="phrase">Take a guess!</h2>
 	<form method="POST" class="check-word">
 		<label for="word">Enter guess:</label>
 		<input
@@ -21,7 +21,11 @@
 		/>
 		<button>Submit</button>
 	</form>
-	<h2>Score: <b class="score">0</b></h2>
+	<h2>
+		Score: <b class="score">0</b>
+		<br />
+		Seconds Left: <b class="timer"></b>
+	</h2>
 	<p class="msg">
 		<!-- For popup messages -->
 	</p>
@@ -29,9 +33,4 @@
 <form action="/restart" class="restart">
 	<button>Restart?</button>
 </form>
-{% endblock %} {% block runjavascript %}
-<script src="/static/app.js"></script>
-<!-- <script>
-	let game = new BoggleGame("boggle", 60);
-</script> -->
 {% endblock %}

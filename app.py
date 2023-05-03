@@ -38,9 +38,16 @@ def check_word():
     return jsonify({'result': response})
     
 
-@app.route('/submit-word', methods=['POST'])
+@app.route('/final-score', methods=['POST'])
 def submit_word():
-    print('Congratulations')
+    score = request.json["score"]
+    highscore = session.get("highscore", 0)
+    numplays = session.get("numplays", 0)
+
+    session['numplays'] = numplays + 1
+    session['highscore'] = max(score, highscore)
+
+    return jsonify(brokeRecord=score > highscore)
 
 @app.route('/restart')
 def restart_game():

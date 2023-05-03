@@ -1,6 +1,7 @@
 body {
 	background-color: azure;
 	text-align: center;
+	justify-content: center;
 }
 
 table {
@@ -22,6 +23,46 @@ td {
 	font-size: 2rem;
 }
 
-form {
+/* form {
 	display: inline-block;
+} */
+
+.err,
+.ok {
+	margin-left: auto;
+	margin-right: auto;
+	padding: 15px;
+	max-width: 300px;
+	color: rgb(32, 32, 32);
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	border-radius: 5px;
+}
+
+.err {
+	background-color: rgba(255, 50, 50, 0.623);
+}
+
+.ok {
+	background-color: rgba(0, 197, 0, 0.5);
+}
+
+.begin {
+	margin-top: 30%;
+}
+
+#begin_button {
+	padding: 30px 40px;
+	border: 3px solid rgb(76, 16, 116);
+	border-radius: 12px;
+	font-size: 25px;
+	color: white;
+	background-color: rgb(165, 82, 185);
+	transition: background-color 300ms ease-in-out;
+}
+
+#begin_button:hover {
+	background-color: rgb(107, 46, 136);
+	transition: background-color 300ms ease-in-out;
+	cursor: pointer;
 }
